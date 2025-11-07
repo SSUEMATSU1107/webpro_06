@@ -81,9 +81,9 @@ app.get("/keiyo_add", (req, res) => {
   let code = req.query.code;
   let name = req.query.name;
   let newdata = { id: id, code: code, name: name };
-  station.push( newdata );
-  res.redirect('/public/keiyo_add.html');
-
+  cafe.push( newdata );
+  //res.redirect('/public/keiyo_add.html');
+  res.render('db1', { data: cafe });
 });
 //追加分終わり/////////////////
 
