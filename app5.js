@@ -74,6 +74,7 @@ let station = [
 ];
 
 
+
 app.get("/keiyo", (req, res) => {
   // 本来ならここにDBとのやり取りが入る
   res.render('db1', { data: station });
