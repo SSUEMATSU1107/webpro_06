@@ -1,0 +1,40 @@
+cd webpro03でnpm startすると
+トップページ	http://localhost:8080/
+英語の挨拶	http://localhost:8080/english
+フランス語の挨拶	http://localhost:8080/france
+ドイツ語の挨拶	http://localhost:8080/germany
+自己紹介ページ	http://localhost:8080/public/syoukai.html
+趣味ページ	http://localhost:8080/public/hobby.html             publicのどこかに入ろうとするのか，.js内で完結するのか
+
+
+
+ node omikuji.js
+ http://localhost:8080/
+
+cd webpro04
+node app4.js 　　　　これで教員が作ったwebpro04のomikuji1に入れる
+ http://localhost:8080/omikuji1
+
+
+ 
+  http://localhost:8080/omikuji2
+
+
+  .mdのやつは，Cmd + Shift + Vでフローチャート見たいのを表示できる
+
+  cd webpro_06
+  node app5.jsでラジオボタンが出るようにする(ejsに変更する？)
+
+以下でgithubに反映できる
+cd 2005-2/webプロ
+$ git add .
+$ git commit -am 'コメント'
+$ git push
+ここでGithubのアクセストークンの入力が求められるので，
+コピペして入力する（手入力だと打ち間違う可能性が高い）
+
+http://localhost:8080/keiyo_add
+http://localhost:8080/public/keiyo_add.html
+↑これ（上の方）
+
+  
