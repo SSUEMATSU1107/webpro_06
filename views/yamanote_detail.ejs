@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= data.name %> の詳細</title>
+</head>
+<body>
+    <h2><%= data.name %> の詳細情報</h2>
+    <table border="1">
+        <tr><td>ID</td><td><%= data.id %></td></tr>
+        <tr><td>駅番号</td><td><%= data.code %></td></tr>
+        <tr><td>駅名</td><td><%= data.name %></td></tr>
+        <tr><td>乗降客数</td><td><%= data.passengers %> 人</td></tr>
+    </table>
+    <hr>
+    <p>
+        <a href="/yamanote/edit/<%= id %>">この情報を編集する</a> | 
+        <a href="/yamanote/delete/<%= id %>" onclick="return confirm('本当に削除しますか？')">削除する</a>
+    </p>
+    <a href="/yamanote">一覧に戻る</a>
+</body>
+</html>

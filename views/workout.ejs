@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>筋トレメニュー一覧</title>
+</head>
+<body>
+    <h1>筋トレメニュー一覧</h1>
+    <p><a href="/workout/create">新しい種目を追加する</a></p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>種目名</th>
+            <th>部位</th>
+        </tr>
+        <% for( let i=0; i < data.length; i++ ) { %>
+        <tr>
+            <td><%= data[i].id %></td>
+            <td><a href="/workout/<%= i %>"><%= data[i].name %></a></td>
+            <td><%= data[i].part %></td>
+        </tr>
+        <% } %>
+    </table>
+    <a href="/yamanote">山手線システムへ</a> | <a href="/nutrition">栄養と食事システムへ</a> 
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>栄養と食事システム</title>
+</head>
+<body>
+    <h1>食事・栄養管理一覧</h1>
+    <p><a href="/nutrition/create">新しい食事を記録する</a></p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>食品名</th>
+            <th>カロリー(kcal)</th>
+        </tr>
+        <% for( let i=0; i < data.length; i++ ) { %>
+        <tr>
+            <td><%= data[i].id %></td>
+            <td><a href="/nutrition/<%= i %>"><%= data[i].food %></a></td>
+            <td><%= data[i].calories %></td>
+        </tr>
+        <% } %>
+    </table>
+    <br>
+    <a href="/yamanote">山手線システムへ</a> | <a href="/workout">筋トレシステムへ</a>
+</body>
+</html>

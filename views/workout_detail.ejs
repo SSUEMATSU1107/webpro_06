@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= data.name %> の詳細</title>
+</head>
+<body>
+    <h2><%= data.name %> の詳細</h2>
+    <table border="1">
+        <tr><th>項目</th><th>データ</th></tr>
+        <tr><td>ID</td><td><%= data.id %></td></tr>
+        <tr><td>種目名</td><td><%= data.name %></td></tr>
+        <tr><td>鍛える部位</td><td><%= data.part %></td></tr>
+        <tr><td>推奨回数</td><td><%= data.reps %> 回</td></tr>
+    </table>
+
+    <p>
+        <a href="/workout/edit/<%= id %>">内容を編集する</a> | 
+        <a href="/workout/delete/<%= id %>" onclick="return confirm('この種目を削除しますか？')">削除する</a>
+    </p>
+    <a href="/workout">一覧に戻る</a>
+</body>
+</html>

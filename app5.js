@@ -1,5 +1,8 @@
+"use strict";
 const express = require("express");
 const app = express();
+
+app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
 app.use("/public", express.static(__dirname + "/public"));
@@ -111,4 +114,92 @@ app.get("/keiyo_add", (req, res) => {
 });
 //追加分終わり/////////////////
 
+
+
+// 1. 山手線システム
+let yamanote = [
+  { id: 1, code: "JY01", name: "東京駅", passengers: 403831 },
+  { id: 2, code: "JY02", name: "神田駅", passengers: 100000 }
+];
+
+app.get("/yamanote", (req, res) => res.render('yamanote', { data: yamanote }));
+app.get("/yamanote/create", (req, res) => res.redirect('/public/yamanote_new.html'));
+app.post("/yamanote", (req, res) => {
+  yamanote.push({ id: yamanote.length + 1, code: req.body.code, name: req.body.name, passengers: Number(req.body.passengers) });
+  res.redirect('/yamanote');
+});
+app.get("/yamanote/:number", (req, res) => res.render('yamanote_detail', { id: req.params.number, data: yamanote[req.params.number] }));
+app.get("/yamanote/edit/:number", (req, res) => res.render('yamanote_edit', { id: req.params.number, data: yamanote[req.params.number] }));
+app.post("/yamanote/update/:number", (req, res) => {
+  const n = req.params.number;
+  if(yamanote[n]) {
+    yamanote[n].code = req.body.code;
+    yamanote[n].name = req.body.name;
+    yamanote[n].passengers = Number(req.body.passengers);
+  }
+  res.redirect('/yamanote/' + n);
+});
+app.get("/yamanote/delete/:number", (req, res) => {
+  yamanote.splice(req.params.number, 1);
+  res.redirect('/yamanote');
+});
+
+// 2. 筋肉トレーニングシステム
+let workout = [
+  { id: 1, name: "ベンチプレス", part: "胸", reps: 10 },
+  { id: 2, name: "スクワット", part: "足", reps: 12 }
+];
+
+app.get("/workout", (req, res) => res.render('workout', { data: workout }));
+app.get("/workout/create", (req, res) => res.redirect('/public/workout_new.html'));
+app.post("/workout", (req, res) => {
+  workout.push({ id: workout.length + 1, name: req.body.name, part: req.body.part, reps: Number(req.body.reps) });
+  res.redirect('/workout');
+});
+app.get("/workout/:number", (req, res) => res.render('workout_detail', { id: req.params.number, data: workout[req.params.number] }));
+app.get("/workout/edit/:number", (req, res) => res.render('workout_edit', { id: req.params.number, data: workout[req.params.number] }));
+app.post("/workout/update/:number", (req, res) => {
+  const n = req.params.number;
+  if(workout[n]) {
+    workout[n].name = req.body.name;
+    workout[n].part = req.body.part;
+    workout[n].reps = Number(req.body.reps);
+  }
+  res.redirect('/workout/' + n);
+});
+app.get("/workout/delete/:number", (req, res) => {
+  workout.splice(req.params.number, 1);
+  res.redirect('/workout');
+});
+
+// 3. 栄養と食事システム
+let nutrition = [
+  { id: 1, food: "鶏胸肉", calories: 108, protein: 22.3 },
+  { id: 2, food: "ブロッコリー", calories: 33, protein: 4.3 }
+];
+
+app.get("/nutrition", (req, res) => res.render('nutrition', { data: nutrition }));
+app.get("/nutrition/create", (req, res) => res.redirect('/public/nutrition_new.html'));
+app.post("/nutrition", (req, res) => {
+  nutrition.push({ id: nutrition.length + 1, food: req.body.food, calories: Number(req.body.calories), protein: Number(req.body.protein) });
+  res.redirect('/nutrition');
+});
+app.get("/nutrition/:number", (req, res) => res.render('nutrition_detail', { id: req.params.number, data: nutrition[req.params.number] }));
+app.get("/nutrition/edit/:number", (req, res) => res.render('nutrition_edit', { id: req.params.number, data: nutrition[req.params.number] }));
+app.post("/nutrition/update/:number", (req, res) => {
+  const n = req.params.number;
+  if(nutrition[n]) {
+    nutrition[n].food = req.body.food;
+    nutrition[n].calories = Number(req.body.calories);
+    nutrition[n].protein = Number(req.body.protein);
+  }
+  res.redirect('/nutrition/' + n);
+});
+app.get("/nutrition/delete/:number", (req, res) => {
+  nutrition.splice(req.params.number, 1);
+  res.redirect('/nutrition');
+});
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
+
+
+

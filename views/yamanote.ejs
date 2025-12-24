@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>山手線駅一覧</title>
+</head>
+<body>
+    <h1>山手線 駅一覧</h1>
+    <p><a href="/yamanote/create">新しい駅を登録する</a></p>
+    <table border="1">
+        <tr><th>ID</th><th>駅番号</th><th>駅名</th></tr>
+        <% for( let i=0; i < data.length; i++ ) { %>
+        <tr>
+            <td><%= data[i].id %></td>
+            <td><%= data[i].code %></td>
+            <td><a href="/yamanote/<%= i %>"><%= data[i].name %></a></td>
+        </tr>
+        <% } %>
+    </table>
+    <a href="/nutrition">栄養と食事システムへ</a> | <a href="/workout">筋トレシステムへ</a>
+</body>
+</html>

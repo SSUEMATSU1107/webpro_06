@@ -26,7 +26,7 @@ node app4.js 　　　　これで教員が作ったwebpro04のomikuji1に入れ
   node app5.jsでラジオボタンが出るようにする(ejsに変更する？)
 
 以下でgithubに反映できる
-cd 2005-2/webプロ
+cd 2025-2/webプロ/webpro_06 
 $ git add .
 $ git commit -am 'コメント'
 $ git push
@@ -36,5 +36,12 @@ $ git push
 http://localhost:8080/keiyo_add
 http://localhost:8080/public/keiyo_add.html
 ↑これ（上の方）
+
+
+最終課題は
+山手線システム(東京新宿，どう言う町か)
+筋肉トレーニングシステム(肩トレ，胸トレ，サイドレイズ，チンニング)
+栄養と食事システムU(卵，蜂蜜，納豆)
+スイーツシステム(マカロンパンケーキパフェとか)
 
   

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>駅情報の編集</title>
+</head>
+<body>
+    <h1>「<%= data.name %>」の編集</h1>
+    <form action="/yamanote/update/<%= id %>" method="POST">
+        <p>駅番号: <input type="text" name="code" value="<%= data.code %>" required></p>
+        <p>駅名: <input type="text" name="name" value="<%= data.name %>" required></p>
+        <p>乗降客数: <input type="number" name="passengers" value="<%= data.passengers %>" required></p>
+        
+        <input type="submit" value="変更を保存する">
+    </form>
+    <br>
+    <a href="/yamanote/<%= id %>">戻る</a>
+</body>
+</html>

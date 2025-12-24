@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規種目登録</title>
+</head>
+<body>
+    <h1>新しいトレーニングの登録</h1>
+    <form action="/workout" method="POST">
+        <label>種目名 (例: 腕立て伏せ): <br>
+            <input type="text" name="name" required>
+        </label><br><br>
+        
+        <label>部位 (例: 胸・腕): <br>
+            <input type="text" name="part" required>
+        </label><br><br>
+        
+        <label>推奨回数: <br>
+            <input type="number" name="reps" required>
+        </label><br><br>
+        
+        <input type="submit" value="登録">
+    </form>
+    <br>
+    <a href="/workout">一覧に戻る</a>
+</body>
+</html>

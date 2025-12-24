@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= data.food %> の詳細</title>
+</head>
+<body>
+    <h2><%= data.food %> の栄養詳細</h2>
+    <table border="1">
+        <tr><td>ID</td><td><%= data.id %></td></tr>
+        <tr><td>食品名</td><td><%= data.food %></td></tr>
+        <tr><td>カロリー</td><td><%= data.calories %> kcal</td></tr>
+        <tr><td>タンパク質</td><td><%= data.protein %> g</td></tr>
+    </table>
+    <hr>
+    <p>
+        <a href="/nutrition/edit/<%= id %>">このデータを編集する</a> | 
+        <a href="/nutrition/delete/<%= id %>" onclick="return confirm('本当に削除しますか？')">削除する</a>
+    </p>
+    <a href="/nutrition">一覧に戻る</a>
+</body>
+</html>

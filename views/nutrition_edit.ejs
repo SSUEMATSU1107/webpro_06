@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>栄養データの編集</title>
+</head>
+<body>
+    <h1>「<%= data.food %>」の編集</h1>
+    <form action="/nutrition/update/<%= id %>" method="POST">
+        <p>食品名: <input type="text" name="food" value="<%= data.food %>" required></p>
+        <p>カロリー(kcal): <input type="number" name="calories" value="<%= data.calories %>" required></p>
+        <p>タンパク質(g): <input type="number" step="0.1" name="protein" value="<%= data.protein %>" required></p>
+        <input type="submit" value="変更を保存する">
+    </form>
+    <br>
+    <a href="/nutrition/<%= id %>">戻る</a>
+</body>
+</html>

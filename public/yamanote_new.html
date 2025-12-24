@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規駅登録</title>
+</head>
+<body>
+    <h1>新しい駅の登録</h1>
+    <form action="/yamanote" method="POST">
+        <p>駅番号: <input type="text" name="code" placeholder="JY01" required></p>
+        <p>駅名: <input type="text" name="name" required></p>
+        <p>乗降客数: <input type="number" name="passengers" required></p>
+        <input type="submit" value="登録">
+    </form>
+    <br>
+    <a href="/yamanote">キャンセルして戻る</a>
+</body>
+</html>
