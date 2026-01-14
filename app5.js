@@ -114,7 +114,11 @@ app.get("/keiyo_add", (req, res) => {
 });
 //追加分終わり/////////////////
 
-
+//最終追加
+app.get("/", (req, res) => {
+  res.render('index'); 
+});
+//最終追加
 
 // 1. 山手線システム
 let yamanote = [
